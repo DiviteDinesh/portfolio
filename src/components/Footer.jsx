@@ -4,8 +4,8 @@ import './Footer.css'; // Import your CSS file for styling
 
 const Footer = () => {
   return (
-    <footer id="contact">
-      <div className="footer-container">
+    <footer id="footer">
+      <div className="footer-container py-4">
         {/* Social Media Links */}
         <div className="social-links">
           <a href="https://www.linkedin.com/in/divitedinesh" target="_blank" rel="noopener noreferrer" className="linkedin">
@@ -28,14 +28,9 @@ const Footer = () => {
           <p>Phone: <a href="tel:+917396521274">+917396521274</a></p>
         </div>
 
-        {/* Feedback Section */}
-        <div className="feedback">
-          <p>We value your feedback! <a href="https://feedback-form-link.com" target="_blank" rel="noopener noreferrer">Click here to provide feedback</a></p>
-        </div>
-
         {/* Copyright */}
         <div className="copyright">
-          <p>&copy; 2025 Dinesh. All rights reserved.</p>
+          &copy; 2025 Dinesh. All rights reserved.
         </div>
       </div>
     </footer>

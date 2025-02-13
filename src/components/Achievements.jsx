@@ -62,7 +62,7 @@ const Achievements = () => {
   return (
     <section className="achievements-section" id="achievements">
       <div className="flex justify-content-center align-content-center">
-        <h2 className="text-center pb-5">Achivements</h2>
+        <h2 className="text-center pb-5">Achievements</h2>
         <div className="slideshow-container">
   {/* Slides */}
   {achievements.map((achievement, i) => (

@@ -6,7 +6,7 @@ const projects = [
     id: 1,
     image: "./gprec-clubs.png",
     title: "GPREC CLUBS",
-    role: "Full Stack Developer",
+    description: "A dynamic college clubs & event management system with AI-powered search, built using MERN stack.",
     repoLink: "https://github.com/DiviteDinesh/gprec-clubs-events",
 
   },
@@ -14,24 +14,24 @@ const projects = [
     id: 2,
     image: "/dev-rooms.png",
     title: "Dev Rooms",
-    role: "Full Stack Developer",
+    description: "Dev Rooms is a powerful and collaborative development and chat platform with AI chatbot, built using the MERN stack.",
     repoLink: "https://github.com/DiviteDinesh/dev_rooms-frontend",
     liveLink: "https://dev-rooms-frontend.onrender.com/"
   },
   {
     id: 3,
     image: "/hackathon_kreative_2k25.jpeg",
-    title: "AI Carrier Path Generator",
-    role: "Full Stack, AI Developer,",
+    title: "AI Career Path Generator",
+    description: "An AI-powered tool that suggests personalized career paths based on user skills and interests. Built using Full Stack technologies with AI integration.",
     repoLink: "https://github.com/DiviteDinesh/Hackathon_kreative_2025",
   },
   {
     id: 4,
     image: "/portfolio.png",  
     title: "Portfolio",
-    role: "Frontend Developer",
-    repoLink: "https://github.com/DiviteDinesh/DiviteDinesh"
-  }
+    description: "A personal portfolio website.",
+    repoLink: "https://github.com/DiviteDinesh/Portfolio"
+  }   
 ];
 
 const Projects = () => {
@@ -49,7 +49,7 @@ const Projects = () => {
                 <div className="contentBx">
                   <h3>
                     {project.title} <br />
-                    <span>{project.role}</span>
+                    <span>{project.description}</span>
                   </h3>
                 </div>
                 <ul className="sci">

@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import "./Home.css";
-
+const resumeLink = import.meta.REACT_APP_RESUME_LINK;
 const typingTexts = [
   "A Full Stack Web Developer.",
   "A MERN Developer.",
@@ -38,7 +37,10 @@ const Home = () => {
       }
     };
 
-    const timer = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
+    const timer = setTimeout(
+      handleTyping,
+      isDeleting ? deletingSpeed : typingSpeed
+    );
     return () => clearTimeout(timer);
   }, [charIndex, isDeleting, index]);
 
@@ -47,13 +49,15 @@ const Home = () => {
       <Navbar />
       {/* Home Section */}
       <section className="home" id="home">
-      
         <div className="intro title">
           <p>Hello, I am</p>
           <h1 className="title">Divite Dinesh</h1>
 
           {/* Typing Effect */}
-          <p className="typed-text">{text}<span className="cursor">|</span></p>
+          <p className="typed-text">
+            {text}
+            <span className="cursor">|</span>
+          </p>
         </div>
 
         {/* Profile Picture */}
@@ -61,11 +65,19 @@ const Home = () => {
           <img src="./logo.jpg" alt="Profile" />
         </div>
         <div className="w-50 btn-container d-flex justify-content-evenly align-items-center pe-5 pt-5">
-          <button className="btn btn-outline-success">Download Resume</button>
-          <button className="btn btn-outline-success">Hire Me</button>
-          
-          
-          </div>
+          <button className="btn btn-outline-success">
+            <a
+              href={resumeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Resume
+            </a>
+          </button>
+          <button className="btn btn-outline-success">
+            <a href="mailto:divitedinesh@gmail.com">Hire Me</a>
+          </button>
+        </div>
       </section>
     </>
   );
