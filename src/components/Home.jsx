@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import "./Home.css";
-const resumeLink = import.meta.REACT_APP_RESUME_LINK;
+const resumeLink = import.meta.env.VITE_RESUME_LINK;
 const typingTexts = [
   "A Full Stack Web Developer.",
   "A MERN Developer.",
