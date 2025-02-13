@@ -1,0 +1,135 @@
+/* Navbar Style */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  width: 100%;
+  height: 10vh;
+  background: rgba(16, 15, 15, 0.605);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: height 0.3s ease;
+}
+
+/* Logo Styling */
+.nav-bar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar .logo-img {
+  height: 40px; /* Ensuring logo image fits in navbar */
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.nav-bar .logo h2 {
+  color: var(--text);
+  margin-left: 10px;
+  font-size: 1.5rem;
+}
+
+.nav-bar .logo:hover .logo-img {
+  transform: scale(1.1); /* Slight scaling on hover */
+}
+
+/* Navigation Styling */
+.nav-bar .navigations {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-bar .nav-list {
+  display: flex;           /* Make the items align in a row */
+  list-style: none;        /* Remove bullet points */
+  padding: 0;              /* Remove any padding */
+  margin: 0;               /* Remove any margin */
+}
+
+.nav-bar .nav-item {
+  margin: 0 15px; /* Space between items */
+}
+
+.nav-bar .nav-link {
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+  padding: 5px;
+}
+
+.nav-bar .nav-link:hover {
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary);
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--text);
+  transition: all 0.3s;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .nav-bar .navigations {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    background-color: rgba(20, 20, 20, 0.9);
+    width: 100%;
+    height: calc(100vh - 10vh);
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    display: none;
+    padding-top: 20px;
+  }
+
+  .nav-bar .navigations.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-bar .logo h2 {
+    font-size: 1.2rem;
+  }
+
+  .nav-bar .nav-link {
+    font-size: 14px;
+  }
+
+  .nav-bar .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-bar .logo h2 {
+    font-size: 1rem;
+  }
+
+  .nav-bar .nav-link {
+    font-size: 12px;
+  }
+}

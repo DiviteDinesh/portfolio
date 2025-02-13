@@ -1,0 +1,196 @@
+/* Root Variables */
+:root {
+  --primary: #47FC9B; /* Replace with desired color */
+  --pri: rgba(71, 252, 155, 0.74);
+}
+
+/* Achievements Section */
+.achievements-section {
+  min-height: 80vh;
+  position: relative;
+  backdrop-filter: blur(10px);
+  padding-top: 15vh; /* Adjust for fixed navbar */
+}
+
+/* Two-Column Layout */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid var(--primary);
+  border-radius: 15px;
+  box-shadow: 0 0 20px var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 5%;
+}
+/* Slideshow Container */
+.slideshow-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--primary);
+  border-radius: 15px;
+  box-shadow: 0 0 20px var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+/* Slides */
+.slides {
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  background: transparent !important; /* Force transparent background */
+}
+
+/* Active Slide */
+.slides.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background: transparent !important; /* Prevent unwanted background */
+}
+
+/* Slide Image */
+.slides img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background: none;
+  /*Ensurenobackgroundfillsemptyspace*/border-radius: 5px;
+}
+
+/* Achievement Text */
+.text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  width: 90%;
+  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+/* Navigation Buttons */
+.navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 15px;
+}
+
+.nav-btn {
+  background-color: var(--pri);
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--pri);
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-btn:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .achievements-section {
+    padding: 40px 5%;
+  }
+
+  /* Change to a single column for small screens */
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .text {
+    font-size: 1rem;
+    width: 90%;
+  }
+
+  .nav-btn {
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+  }
+}
+/* Dots Container - Move Below the Slideshow */
+.dots {
+  position: relative; /* Change from absolute */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Adjust spacing */
+  margin-top: 10px; /* Move below slideshow */
+}
+
+/* Dots Styling */
+.dot {
+  width: 1vw;
+  height: 1vw;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transition:;
+  -moz-transition:;
+  -ms-transition:;
+  -o-transition:;
+}
+
+/* Active Dot */
+.dot.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+  

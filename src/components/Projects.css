@@ -1,0 +1,150 @@
+#projects {
+  backdrop-filter: blur(10px);
+  padding-top: 15vh; /* Adjust for fixed navbar */
+}
+
+/* Main container for the project cards */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+/* Individual card styles */
+.card {
+  position: relative;
+  width: 50vh;  
+  height: 30vh;
+  margin: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+/* Image inside card */
+.card .imgBx img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  object-fit: cover;
+}
+
+/* Content inside card */
+.card .content {
+  position: absolute;
+  bottom: -160px;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: bottom 0.5s;
+  transition-delay: 0.8s;
+}
+
+/* On hover: content will move up */
+.card:hover .content {
+  bottom: 0px;
+  transition-delay: 0s;
+}
+
+/* Title text in content */
+.card .content .contentBx h3 {
+  color: rgba(184, 184, 0, 0.889);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.1em;
+  text-align: center;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition-delay: 0.6s;
+}
+
+/* Title hover effect */
+.card:hover .content .contentBx h3 {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* Span inside the title */
+.card .content .contentBx h3 span {
+  color: black; 
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+/* Social Icons container inside the card */
+.card .content .sci {
+  position: relative;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px; /* Spacing between text and icons */
+  gap: 15px; /* Space between icons */
+}
+
+/* Individual list item for each icon */
+.card .content .sci li {
+  list-style: none;
+  display: flex;
+  justify-items: center;
+  margin: 10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+  transition-delay: calc(0.2s * var(--i));
+  -webkit-transform: translateY(40px);
+  -moz-transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  -o-transform: translateY(40px);
+}
+/* On hover: icons will move up */
+.card:hover .content .sci li {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* Icon styles */
+.card .content .sci li a {
+  
+  color: black;
+  font-size: 20px; /* Larger icons */
+  transition: color 0.3s ease;
+}
+/* Icon hover effect */
+.card .content .sci li a:hover {
+  color: rgb(255, 210, 96); /* Color on hover */
+}
+
+
+.section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  -webkit-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  -moz-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  -ms-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  -o-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
